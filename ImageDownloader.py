@@ -4,7 +4,6 @@
 Created on 08/08/2015
 
 @author: karippain
-
 '''
 
 import urllib
@@ -29,6 +28,6 @@ def imageDownload():
 try:
 	imageDownload() 
 except:
-	print "Error: unable to start downoad"
+	print "Error: unable to start download"
 
 
