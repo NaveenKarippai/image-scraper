@@ -14,11 +14,11 @@ def imageDownload():
 
 	# relative file path
 	dir = os.path.dirname(__file__)						
-	ImageBook = os.path.join(dir, 'ImageCollection.txt')		
+	imageBook = os.path.join(dir, 'ImageCollection.txt')		
 
 
 	# read text file
-	with open(ImageBook) as textFile:
+	with open(imageBook) as textFile:
 	    textFileContent = textFile.readlines()					
 
 
@@ -29,6 +29,6 @@ def imageDownload():
 try:
 	imageDownload() 
 except:
-	print "Error: unable to start down"
+	print "Error: unable to start downoad"
 
 
