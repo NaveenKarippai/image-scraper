@@ -10,20 +10,25 @@ Created on 08/08/2015
 import urllib
 import os
 
-# relative file path
-dir = os.path.dirname(__file__)						
-ImageBook = os.path.join(dir, 'ImageCollection.txt')		
+def imageDownload():
+
+	# relative file path
+	dir = os.path.dirname(__file__)						
+	ImageBook = os.path.join(dir, 'ImageCollection.txt')		
 
 
-# read text file
-with open(ImageBook) as textFile:
-    textFileContent = textFile.readlines()					
+	# read text file
+	with open(ImageBook) as textFile:
+	    textFileContent = textFile.readlines()					
 
 
-# download images
-for idx, val in enumerate(textFileContent):
-    urllib.urlretrieve(val, dir+"/"+str(idx)+".jpg")		    
+	# download images
+	for idx, val in enumerate(textFileContent):
+	    urllib.urlretrieve(val, dir+"/"+str(idx)+".jpg")		    
     
- 
+try:
+	imageDownload() 
+except:
+	print "Error: unable to start down"
 
 
