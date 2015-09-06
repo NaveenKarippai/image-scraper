@@ -9,25 +9,29 @@ Created on 08/08/2015
 import urllib
 import os
 
-def imageDownload():
+# relative file path
+def filePath(fileName):
+	dirPath = os.path.dirname(__file__)						
+	relFilePath = os.path.join(dirPath, fileName)
+	return dirPath, relFilePath		
 
-	# relative file path
-	dir = os.path.dirname(__file__)						
-	imageBook = os.path.join(dir, 'ImageCollection.txt')		
+# read file content
+def readFile(filePath):
+	with open(filePath) as textFile:
+	    textFileContent = textFile.readlines()
+    	return textFileContent	
 
+# download images				
+def downloadImages(dirname, urlData):
+	for idx, val in enumerate(urlData):
+	    urllib.urlretrieve(val, dirname+"/"+str(idx)+".jpg")		    
 
-	# read text file
-	with open(imageBook) as textFile:
-	    textFileContent = textFile.readlines()					
-
-
-	# download images
-	for idx, val in enumerate(textFileContent):
-	    urllib.urlretrieve(val, dir+"/"+str(idx)+".jpg")		    
-    
 try:
-	imageDownload() 
+	dirname, imageBookPath = filePath('ImageCollection.txt')
+	imageBookData = readFile(imageBookPath)
+	downloadImages(dirname, imageBookData)    
 except:
-	print "Error: unable to start download"
+ 	print "Error: unable to download"
+
 
 
