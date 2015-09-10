@@ -1,4 +1,4 @@
-# image-downloader
+# image-scraper
 Python script - read urls from a txt file , download and store url data (images) on local drive 
 
 
