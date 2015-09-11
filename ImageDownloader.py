@@ -25,6 +25,8 @@ class ImagesDownload(object):
 
 	# download images				
 	def downloadImages(self, dirname, urlData):
+		if not os.path.exists('pictures'): os.makedirs('pictures')
+		dirname = dirname+'/pictures'
 		for idx, val in enumerate(urlData):
 			urllib.urlretrieve(val, dirname+"/"+str(idx)+".jpg")		    
 
