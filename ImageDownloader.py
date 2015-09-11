@@ -1,21 +1,21 @@
 #!/usr/bin/python
 
-'''
-created on 08/08/2015
-
-@author: Naveen Karippai
-'''
-
 import urllib
 import os
 
 class ImagesDownload(object):
+
+	def __init__(self, fileName = None):
+		self.fileName = fileName
 		
 	# relative file path
-	def filePath(self, fileName):
-		dirPath = os.path.dirname(__file__)						
-		relFilePath = os.path.join(dirPath, fileName)
-		return dirPath, relFilePath		
+	def filePath(self):
+		dirPath = os.path.dirname(__file__)	
+		if self.fileName != None:					
+			relFilePath = os.path.join(dirPath, self.fileName)
+			return dirPath, relFilePath		
+		else:
+			return dirPath
 
 	# read file content
 	def readFile(self, filePath):
@@ -33,8 +33,8 @@ class ImagesDownload(object):
 if __name__ == '__main__':
 
 	try:
-		images = ImagesDownload()
-		dirname, imageBookPath = images.filePath('ImageCollection.txt')
+		images = ImagesDownload('ImageCollection.txt')
+		dirname, imageBookPath = images.filePath()
 		imageBookData = images.readFile(imageBookPath)
 		images.downloadImages(dirname, imageBookData)
 
