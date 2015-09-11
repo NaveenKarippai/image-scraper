@@ -21,5 +21,5 @@ for element in img_elements:
 
 
 images = ImageDownloader.ImagesDownload()
-dirname, imageBookPath = images.filePath('ImageCollection.txt')
+dirname = images.filePath()
 images.downloadImages(dirname, img_list)
