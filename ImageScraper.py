@@ -1,32 +1,25 @@
 #!/usr/bin/python
 
 from BeautifulSoup import BeautifulSoup
-import ImageDownloader
 import urllib2
 import re
+import ImageDownloader
 
+scrap_url = 'http://www.people.com/people/jennifer_lawrence/'
 
-response = urllib2.urlopen('http://adeleinbeautyland.blogspot.de/')
+url_response = urllib2.urlopen(scrap_url)
+html_parse = BeautifulSoup(url_response)
+img_elements = html_parse.findAll('img')
+img_list = []
 
-page = BeautifulSoup(response)
-k = page.findAll('img')
-l=[]
-for h in k:
-	m = h['src']
-
-	urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', m)
-	if urls == []:
-		pass
-		# print 'this is bad'
-	else:
-		l.extend(urls)
-		# print urls
-# print l
-print len(l)
-for g in l:
-	print g
+for element in img_elements:
+	img_src = element['src']
+	if not img_src.startswith('http'):
+		img_src = '%s%s' % ('http:', img_src)
+	urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', img_src)
+	img_list.extend(urls)
 
 
 images = ImageDownloader.ImagesDownload()
 dirname, imageBookPath = images.filePath('ImageCollection.txt')
-images.downloadImages(dirname, l)
+images.downloadImages(dirname, img_list)
