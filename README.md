@@ -3,12 +3,12 @@ Python script to scrap images
 
 ### Information
 
-#### ImageDownloader.py
+##### ImageDownloader.py
 
 * Include url of images sperated by newline chartacter in ImageCollection.txt file 
 * Execute ImageDownloader.py script and images will be downloaded to pictures directory
 
-#### ImageScraper.py
+##### ImageScraper.py
 
 * Instantiate class with url of webpage to scrap
 
