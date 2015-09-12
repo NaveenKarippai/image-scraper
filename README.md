@@ -1,6 +1,13 @@
 # image-scraper
 Python script to scrap images 
 
+### Developer's guide
+```
+$ git clone https://github.com/NaveenKarippai/image-scraper
+$ cd image-scraper
+$ python ImageScraper.py
+```
+
 ### Information
 
 ##### ImageDownloader.py
