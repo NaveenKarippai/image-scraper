@@ -24,19 +24,19 @@ class ImagesDownload(object):
 	    	return textFileContent	
 
 	# download images				
-	def downloadImages(self, dirname, urlData):
+	def downloadImages(self, dirName, urlData):
 		if not os.path.exists('pictures'): os.makedirs('pictures')
-		dirname = dirname+'/pictures'
+		dirName = dirName+'/pictures'
 		for idx, val in enumerate(urlData):
-			urllib.urlretrieve(val, dirname+"/"+str(idx)+".jpg")		    
+			urllib.urlretrieve(val, dirName+"/"+str(idx)+".jpg")		    
 
 if __name__ == '__main__':
 
 	try:
 		images = ImagesDownload('ImageCollection.txt')
-		dirname, imageBookPath = images.filePath()
+		dirName, imageBookPath = images.filePath()
 		imageBookData = images.readFile(imageBookPath)
-		images.downloadImages(dirname, imageBookData)
+		images.downloadImages(dirName, imageBookData)
 
 	except:
 		print "Error: unable to download"
