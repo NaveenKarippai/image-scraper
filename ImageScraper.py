@@ -29,9 +29,9 @@ if __name__ == '__main__':
 
 	try:
 		scrap_images = ImageScrapy('http://www.people.com/people/jennifer_lawrence/')
-		dirname = scrap_images.filePath()
+		dirName = scrap_images.filePath()
 		img_list = scrap_images.parseImgLinks()
-		scrap_images.downloadImages(dirname, img_list)
+		scrap_images.downloadImages(dirName, img_list)
 
 	except:
 		print "Error: unable to download"
