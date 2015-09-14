@@ -11,7 +11,7 @@ class ImageScrapy(ImageDownloader.ImagesDownload):
 	def __init__(self, scrap_link, *args,**kwargs):
 		super(ImageScrapy,self).__init__(*args,**kwargs)
 		self.scrap_url = scrap_link
-		self.img_list = set() # Use set to avoid duplicates which we might have
+		self.img_list = set() # Use set to avoid duplicates 
 
 	# extract all img src from webpage
 	def parseImgLinks(self):
