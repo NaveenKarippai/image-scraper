@@ -8,7 +8,7 @@ from multiprocessing import Pool,TimeoutError
 
 class ImagesDownload(object):
 
-	def __init__(self, pool_size=5,timeout=10,fileName = None):
+	def __init__(self, pool_size = 5,timeout = 10,fileName = None):
 		self.fileName = fileName
 		self._pool_size = pool_size
 		self._timeout = timeout
@@ -56,7 +56,7 @@ class ImagesDownload(object):
 
 
 if __name__ == '__main__':
-		images = ImagesDownload('ImageCollection.txt')
+		images = ImagesDownload(fileName = 'ImageCollection.txt')
 		dirName, imageBookPath = images.filePath()
 		imageBookData = images.readFile(imageBookPath)
 		images.downloadImages(dirName, imageBookData)
