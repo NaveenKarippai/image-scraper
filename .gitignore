@@ -1,1 +1,8 @@
 DevKey.txt
+# Ignore PyCharm config
+.idea/
+# Ignore virtualenv environents. usually its in env/ or environment/ directories
+env/
+environment/
+# Others
+*.pyc
