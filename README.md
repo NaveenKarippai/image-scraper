@@ -16,10 +16,4 @@ $ python ImageScraper.py
 ###### ImageScraper.py
 * Instantiate class with url of webpage to scrap
 
-#### Dependencies
-* urllib
-* urllib2
-* os
-* BeautifulSoup
-* re
 
