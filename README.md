@@ -1,4 +1,4 @@
-# image-scraper
+# image-scraper [![Build Status](https://travis-ci.org/nathanIL/image-scraper.svg)](https://travis-ci.org/nathanIL/image-scraper)
 Python script to scrap images 
 
 ### Developer's guide
