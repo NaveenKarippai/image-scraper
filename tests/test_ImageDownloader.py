@@ -16,12 +16,11 @@ class TestImageDownloader(unittest.TestCase, ImageDownloader.ImagesDownload):
 		self.images = ImageDownloader.ImagesDownload(fileName = None)
 
 	def test_instance(self):
-		self.assertIsInstance(self.images, ImageDownloader.ImagesDownload, 'ImagesDownload class instantiation fail')   
+		self.assertIsInstance(self.images, ImageDownloader.ImagesDownload, 'class ImagesDownload instantiation fail')   
 
-	# def test_filePath(self):
-	# 	k = self.images.filePath()
-	# 	print k
-	# 	self.assertEqual(str(m), 'str', 'fail')
+	def test_filePath(self):
+		path = self.images.filePath()
+		self.assertIsInstance(path, str, 'class ImagesDownload method filePath fail')
 
 	def tearDown(self):
 		pass
