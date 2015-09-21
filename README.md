@@ -17,10 +17,10 @@ $ python ImageScraper.py
 * Instantiate class with url of webpage to scrap
 
 ### Unit Testing
-`python -m unittest discover -v tests/`
+`$ python -m unittest discover -v tests/`
 
 ### Contributing
 Please read the ![contributor's guide](https://github.com/NaveenKarippai/image-scraper/blob/master/CONTRIBUTING.md)
 
-### TODO
-Please read the ![ToDo list](https://github.com/NaveenKarippai/image-scraper/blob/master/TODO.txt) for new tasks
+### ToDo
+Please read the ![ToDo list](https://github.com/NaveenKarippai/image-scraper/blob/master/TODO.txt) for new tasks you could contribute to.
