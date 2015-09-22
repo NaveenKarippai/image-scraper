@@ -25,7 +25,7 @@ class ImagesDownload(object):
 	# read file content
 	def readFile(self, filePath):
 		with open(filePath) as textFile:
-			textFileContent = textFile.readlines()
+			textFileContent = textFile.read().splitlines() 
 			return textFileContent
 
 	# download images				
