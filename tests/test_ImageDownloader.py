@@ -7,17 +7,17 @@ import sys
 fileName = os.path.join(os.getcwd(), os.listdir(os.getcwd())[0])   # directory of directory of file
 sys.path.append(os.path.dirname(os.path.dirname(fileName)))
 
-import ImageDownloader
+from image_scraper import ImagesDownload
 import unittest
 
-class TestImageDownloader(unittest.TestCase, ImageDownloader.ImagesDownload):
+class TestImageDownloader(unittest.TestCase, ImagesDownload):
 
 	def setUp(self):
-		self.images = ImageDownloader.ImagesDownload(fileName = None)
+		self.images = ImagesDownload(fileName = None)
 		self.mock_data = ['a.png', 'b.jpg', 'c.jpg']
 
 	def test_instance(self):
-		self.assertIsInstance(self.images, ImageDownloader.ImagesDownload, 'class ImagesDownload instantiation fail')   
+		self.assertIsInstance(self.images, ImagesDownload, 'class ImagesDownload instantiation fail')
 
 	def test_filePath(self):
 		path = self.images.filePath()

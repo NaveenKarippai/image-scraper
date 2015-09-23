@@ -1,7 +1,7 @@
 import unittest
 import httpretty
 import os
-from ImageScraper import ImageScrapy
+from image_scraper import ImageScrapy
 
 # Absolute path to http_resources dir.
 HTTP_RESOURCES_PATH = os.path.join( os.path.dirname(os.path.abspath(__file__)), 'http_resources' )
