@@ -1,14 +1,15 @@
 import urllib
 import os
-from os.path import splitext,basename
-from multiprocessing import Pool,TimeoutError
+from os.path import splitext, basename
+from multiprocessing import Pool, TimeoutError
 from BeautifulSoup import BeautifulSoup
-from urlparse import urlparse,urljoin
+from urlparse import urlparse, urljoin
 import urllib2
+
 
 class ImagesDownload(object):
 
-	def __init__(self, pool_size = 5,timeout = 10,fileName = None):
+    def __init__(self, pool_size=5, timeout=10, fileName=None):
 		self.fileName = fileName
 		self._pool_size = pool_size
 		self._timeout = timeout
