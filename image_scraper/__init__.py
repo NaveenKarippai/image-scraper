@@ -9,12 +9,12 @@ import urllib2
 
 class ImagesDownload(object):
 
-    def __init__(self, pool_size=5, timeout=10, fileName=None):
+	def __init__(self, pool_size=5, timeout=10, fileName=None):
 		self.fileName = fileName
 		self._pool_size = pool_size
 		self._timeout = timeout
 
-	# relative file path
+		# relative file path
 	def filePath(self):
 		dirPath = os.curdir
 		if self.fileName != None:
@@ -23,13 +23,13 @@ class ImagesDownload(object):
 		else:
 			return dirPath
 
-	# read file content
+		# read file content
 	def readFile(self, filePath):
 		with open(filePath) as textFile:
 			textFileContent = textFile.read().splitlines()
 			return textFileContent
 
-	# download images
+		# download images
 	def downloadImages(self, dirName, urlData):
 		child_folder = 'pictures'
 		# EAFP (see https://docs.python.org/2/glossary.html)
